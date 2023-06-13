@@ -17,4 +17,36 @@ public class Pomodora {
     String s_string = String.format("%02d", s);
 
 
+
+    //Hashini
+    public Pomodora(){
+        this.setSize(420,420);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setLayout(null);
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
+
+
+        this.Title = new JLabel("POMODORO TIMER");
+        this.Title.setBounds(120,50,250,150);
+        this.Title.setFont(new Font("Sans-serif", Font.BOLD, 18));
+        this.add(this.Title);
+
+        this.start = new JButton("Start");
+        this.reset = new JButton("Reset");
+        this.start.setBounds(100,200,100,50);
+        this.reset.setBounds(200, 200, 100, 50);
+
+        this.add(this.start);
+        this.add(this.reset);
+        this.start.addActionListener(this);
+        this.reset.addActionListener(this);
+
+        this.time_label = new JLabel(h_string+":"+m_string+":"+s_string);
+        this.time_label.setBounds(175,100,100,100);
+        this.add(this.time_label);
+    }
+
+
+
 }
