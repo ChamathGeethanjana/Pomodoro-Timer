@@ -47,6 +47,31 @@ public class Pomodora {
         this.add(this.time_label);
     }
 
+    //sewwandi
+    Timer timer = new Timer(1000, new ActionListener(){
+        @Override
+        public void actionPerformed (ActionEvent e) {
+            if(elapsedtime !=0 ){
+                elapsedtime = elapsedtime - 1000;
+                h = (elapsedtime/3600000);
+                m = (elapsedtime/60000)%60;
+                s = (elapsedtime/1000)%60;
+                String h_String = String.format("%02d", h);
+                String m_String = String.format("%02d", m);
+                String s_String = String.format("%02d", s);
+                time_label.setText(h_String+":"+m_String+":"+s_String);
+            }else{
+                try {
+                    stoptimerinzero();
+                } catch (Exception ex) {
+                    Logger.getLogger(Pomodora.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }
+        }
+    }
+    );
 
 
-}
+
+            }
