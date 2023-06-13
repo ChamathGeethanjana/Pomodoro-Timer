@@ -102,5 +102,33 @@ public class Pomodora {
         }
     }
 
+    // Supun
+    public void stoptimerinzero() throws IOException, Exception{
+        timer.stop();
+        elapsedtime = sessiontime*1000;
+        Sewwandi
+                Supun
+        h = (elapsedtime/3600000);
+        m = (elapsedtime/60000)%60;
+        s = (elapsedtime/1000)%60;
+        String h_String = String.format("%02d", h);
+        String m_String = String.format("%02d", m);
+        String s_String = String.format("%02d", s);
+        //this.time_label.setBounds(175,100,100,100);
+        this.time_label.setText(h_String+":"+m_String+":"+s_String);
+        this.start.setText("Start");
+        startClicked = false;
+
+        Pomodora.screen2();
+
+        //popup messages
+// int choice = JOptionPane.showConfirmDialog(null, "Nice Session", "Session
+        End",JOptionPane.YES_NO_OPTION);
+// if (choice == JOptionPane.YES_OPTION){
+// JOptionPane.showMessageDialog(null,"Keep Going");
+// }else if (choice == JOptionPane.NO_OPTION){
+// JOptionPane.showMessageDialog(null, "Dont Give Up");
+// }
+    }
 
 }
