@@ -72,35 +72,7 @@ public class Pomodora {
     }
     );
 
-    //Thuvarakan
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==start){
-            if(startClicked==false){
-                start.setText("Stop");
-                startClicked = true;
-                timer.start();
-            }
-            else{
-                start.setText("Start");
-                startClicked = false;
-                timer.stop();
-            }
-        }else if(e.getSource()==reset){
-            timer.stop();
-            elapsedtime = sessiontime*1000;
-            h = (elapsedtime/3600000);
-            m = (elapsedtime/60000)%60;
-            s = (elapsedtime/1000)%60;
-            String h_String = String.format("%02d", h);
-            String m_String = String.format("%02d", m);
-            String s_String = String.format("%02d", s);
-            this.time_label.setBounds(175,100,100,100);
-            this.time_label.setText(h_String+":"+m_String+":"+s_String);
-            this.start.setText("Start");
-            startClicked = false;
-        }
-    }
+    
 
 
 }
