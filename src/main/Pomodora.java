@@ -1,6 +1,28 @@
 package main;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+//import javax.swing.JOptionPane;
+import javax.swing.Timer;
+import java.io.*;
+//import java.util.Date;
+//import java.util.Timer;
+//import java.util.TimerTask;
+//import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+//import javax.swing.AbstractAction;
+import javax.swing.JPanel;
+//import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
-public class Pomodora {
+
+public class Pomodora extends JFrame implements ActionListener {
     private JButton start;
     private JButton reset;
     private JLabel time_label;
@@ -106,8 +128,7 @@ public class Pomodora {
     public void stoptimerinzero() throws IOException, Exception{
         timer.stop();
         elapsedtime = sessiontime*1000;
-        Sewwandi
-                Supun
+
         h = (elapsedtime/3600000);
         m = (elapsedtime/60000)%60;
         s = (elapsedtime/1000)%60;
@@ -123,7 +144,7 @@ public class Pomodora {
 
         //popup messages
 // int choice = JOptionPane.showConfirmDialog(null, "Nice Session", "Session
-        End",JOptionPane.YES_NO_OPTION);
+        //End",JOptionPane.YES_NO_OPTION);
 // if (choice == JOptionPane.YES_OPTION){
 // JOptionPane.showMessageDialog(null,"Keep Going");
 // }else if (choice == JOptionPane.NO_OPTION){
