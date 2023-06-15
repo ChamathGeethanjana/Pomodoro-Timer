@@ -130,5 +130,58 @@ public class Pomodora {
 // JOptionPane.showMessageDialog(null, "Dont Give Up");
 // }
     }
+    
+    public static void screen2() throws InterruptedException {
+        JFrame frame2 = new JFrame();
+        frame2.setAlwaysOnTop (true);
+
+        Toolkit toolkit=Toolkit.getDefaultToolkit(); //Defining the Toolkit from Java AWT
+        Dimension screen = toolkit.getScreenSize(); //Obtains the screen size of the device
+        int height = (int)screen.getHeight(); //Obtains the height of the device
+        int width = (int)screen.getWidth(); //Obtains the width of the device
+
+        frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame2.setPreferredSize(new Dimension(width, height)); frame2.setUndecorated(true);
+        JPanel panel = new JPanel();
+//       panel.setLayout(null);
+
+        JLabel guide = new JLabel("CLICK HERE TO ABORT THE PROCESS!!!");
+        guide.setForeground(new Color(0xffffff));
+
+//       JLabel details = new JLabel("||---WAIT FOR TWO MINUTES---||");
+//       details.setForeground(new Color(0xffffff));
+
+        panel.setBackground(Color.black);
+        panel.add(guide);
+//       panel.add(details);
+
+        JButton abt = new JButton("CLOSE");
+        abt.setBackground(new Color(0x919191));
+
+        abt.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                frame2.setVisible(false);
+            }
+        });
+        panel.add(abt);
+        frame2.add(panel);
+        frame2.pack();
+        Timer timer = new Timer(100000, new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                frame2.setVisible(false);
+                frame2.dispose();
+            }
+        });
+        timer.setRepeats(false);
+        timer.start();
+        frame2.setVisible(true);
+//        frame2.setExtendedState(JFrame.ICONIFIED);
+//        frame2.setExtendedState(fullscreen ? JFrame.MAXIMIZED_BOTH : JFrame.NORMAL);
+
+
+
+
+    }
+
 
 }
